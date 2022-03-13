@@ -11,7 +11,6 @@ import { LanguagesModule } from 'app/layout/common/languages/languages.module';
 import { MessagesModule } from 'app/layout/common/messages/messages.module';
 import { NotificationsModule } from 'app/layout/common/notifications/notifications.module';
 import { SearchModule } from 'app/layout/common/search/search.module';
-import { ShortcutsModule } from 'app/layout/common/shortcuts/shortcuts.module';
 import { UserModule } from 'app/layout/common/user/user.module';
 import { SharedModule } from 'app/shared/shared.module';
 import { ClassicLayoutComponent } from 'app/layout/layouts/vertical/classic/classic.component';
@@ -33,7 +32,6 @@ import { ClassicLayoutComponent } from 'app/layout/layouts/vertical/classic/clas
         MessagesModule,
         NotificationsModule,
         SearchModule,
-        ShortcutsModule,
         UserModule,
         SharedModule
     ],
