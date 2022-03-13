@@ -8,7 +8,6 @@ import { MatMenuModule } from '@angular/material/menu';
 import { FuseNavigationModule } from '@fuse/components/navigation';
 import { LanguagesModule } from 'app/layout/common/languages/languages.module';
 import { MessagesModule } from 'app/layout/common/messages/messages.module';
-import { NotificationsModule } from 'app/layout/common/notifications/notifications.module';
 import { SearchModule } from 'app/layout/common/search/search.module';
 import { UserModule } from 'app/layout/common/user/user.module';
 import { SharedModule } from 'app/shared/shared.module';
@@ -28,7 +27,6 @@ import { DenseLayoutComponent } from 'app/layout/layouts/vertical/dense/dense.co
         FuseNavigationModule,
         LanguagesModule,
         MessagesModule,
-        NotificationsModule,
         SearchModule,
         UserModule,
         SharedModule
