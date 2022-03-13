@@ -1,5 +1,6 @@
 ### Main repository of the flags ###
 https://github.com/Yummygum/flagpack-core
+wikipedia for svgs
 
 ### We used the medium (m) detailed SVGs which are located here ###
 https://github.com/Yummygum/flagpack-core/tree/main/svg/m

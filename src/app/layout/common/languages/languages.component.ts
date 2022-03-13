@@ -1,7 +1,8 @@
+import { TranslateService } from '@ngx-translate/core';
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { take } from 'rxjs/operators';
-import { AvailableLangs, TranslocoService } from '@ngneat/transloco';
 import { FuseNavigationService, FuseVerticalNavigationComponent } from '@fuse/components/navigation';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 
 @Component({
     selector       : 'languages',
@@ -12,9 +13,12 @@ import { FuseNavigationService, FuseVerticalNavigationComponent } from '@fuse/co
 })
 export class LanguagesComponent implements OnInit, OnDestroy
 {
-    availableLangs: AvailableLangs;
-    activeLang: string;
+    availableLangs: { id: string }[];
     flagCodes: any;
+    private activeLangSubject: BehaviorSubject<string> = new BehaviorSubject(undefined);
+    public readonly activeLang$: Observable<string> = this.activeLangSubject.asObservable();
+
+    private destroy$: Subject<boolean> = new Subject<boolean>();
 
     /**
      * Constructor
@@ -22,7 +26,7 @@ export class LanguagesComponent implements OnInit, OnDestroy
     constructor(
         private _changeDetectorRef: ChangeDetectorRef,
         private _fuseNavigationService: FuseNavigationService,
-        private _translocoService: TranslocoService
+        private translate: TranslateService
     )
     {
     }
@@ -36,23 +40,34 @@ export class LanguagesComponent implements OnInit, OnDestroy
      */
     ngOnInit(): void
     {
-        // Get the available languages from transloco
-        this.availableLangs = this._translocoService.getAvailableLangs();
+        this.activeLangSubject.next(this.translate.currentLang);
+        // Get the available languages from translate service
+        this.availableLangs = [
+            {
+                id: 'es'
+            },
+            {
+                id: 'ca'
+            },
+            {
+                id: 'en'
+            }
+        ];
 
         // Subscribe to language changes
-        this._translocoService.langChanges$.subscribe((activeLang) => {
-
+        this.translate.onLangChange.subscribe((activeLang) => {
             // Get the active lang
-            this.activeLang = activeLang;
+            this.activeLangSubject.next(activeLang.lang);
 
             // Update the navigation
-            this._updateNavigation(activeLang);
+            this._updateNavigation(activeLang.lang);
         });
 
         // Set the country iso codes for languages for flags
         this.flagCodes = {
-            'en': 'us',
-            'tr': 'tr'
+            'es': 'es',
+            'ca': 'ca',
+            'en': 'en'
         };
     }
 
@@ -61,6 +76,8 @@ export class LanguagesComponent implements OnInit, OnDestroy
      */
     ngOnDestroy(): void
     {
+        this.destroy$.next(true);
+        this.destroy$.unsubscribe();
     }
 
     // -----------------------------------------------------------------------------------------------------
@@ -75,7 +92,7 @@ export class LanguagesComponent implements OnInit, OnDestroy
     setActiveLang(lang: string): void
     {
         // Set the active lang
-        this._translocoService.setActiveLang(lang);
+        this.translate.use(lang);
     }
 
     /**
@@ -124,30 +141,20 @@ export class LanguagesComponent implements OnInit, OnDestroy
         const projectDashboardItem = this._fuseNavigationService.getItem('dashboards.project', navigation);
         if ( projectDashboardItem )
         {
-            this._translocoService.selectTranslate('Project').pipe(take(1))
-                .subscribe((translation) => {
+            const langs = this.translate.langs[this.translate.currentLang];
+            projectDashboardItem.title = langs['Project'];
 
-                    // Set the title
-                    projectDashboardItem.title = translation;
-
-                    // Refresh the navigation component
-                    navComponent.refresh();
-                });
+            navComponent.refresh();
         }
 
         // Get the Analytics dashboard item and update its title
         const analyticsDashboardItem = this._fuseNavigationService.getItem('dashboards.analytics', navigation);
         if ( analyticsDashboardItem )
         {
-            this._translocoService.selectTranslate('Analytics').pipe(take(1))
-                .subscribe((translation) => {
+            const langs = this.translate.langs[this.translate.currentLang];
+            analyticsDashboardItem.title = langs['Analytics'];
 
-                    // Set the title
-                    analyticsDashboardItem.title = translation;
-
-                    // Refresh the navigation component
-                    navComponent.refresh();
-                });
+            navComponent.refresh();
         }
     }
 }

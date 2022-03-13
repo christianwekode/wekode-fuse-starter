@@ -1,5 +1,9 @@
 {
     "welcome-back": "Welcome back",
     "Project": "Project",
-    "Analytics": "Analytics"
+    "Analytics": "Analytics",
+    "example": "Example route",
+    "LANG-ES": "Español",
+    "LANG-CA": "Català",
+    "LANG-EN": "English"
 }
