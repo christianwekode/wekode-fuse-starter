@@ -7,12 +7,12 @@
             </div>
 
             <!-- Title -->
-            <div class="mt-8 text-4xl font-extrabold tracking-tight leading-tight">Sign in</div>
+            <div class="mt-8 text-4xl font-extrabold tracking-tight leading-tight">{{ 'SIGN-IN.TITLE' | translate }}</div>
             <div class="flex items-baseline mt-0.5 font-medium">
-                <div>Don't have an account?</div>
+                <div>{{ 'SIGN-IN.NO-ACCOUNT' | translate }}</div>
                 <a
                     class="ml-1 text-primary-500 hover:underline"
-                    [routerLink]="['/sign-up']">Sign up
+                    [routerLink]="['/sign-up']">{{ 'SIGN-UP.TITLE' | translate }}
                 </a>
             </div>
 
@@ -35,22 +35,22 @@
 
                 <!-- Email field -->
                 <mat-form-field class="w-full">
-                    <mat-label>Email address</mat-label>
+                    <mat-label>{{ 'SIGN-IN.EMAIL' | translate }}</mat-label>
                     <input
                         id="email"
                         matInput
                         [formControlName]="'email'">
                     <mat-error *ngIf="signInForm.get('email').hasError('required')">
-                        Email address is required
+                        {{ 'SIGN-IN.EMAIL-REQUIRED' | translate }}
                     </mat-error>
                     <mat-error *ngIf="signInForm.get('email').hasError('email')">
-                        Please enter a valid email address
+                        {{ 'SIGN-IN.EMAIL-INCORRECT' | translate }}
                     </mat-error>
                 </mat-form-field>
 
                 <!-- Password field -->
                 <mat-form-field class="w-full">
-                    <mat-label>Password</mat-label>
+                    <mat-label>{{ 'SIGN-IN.PASSWORD' | translate }}</mat-label>
                     <input
                         id="password"
                         matInput
@@ -72,7 +72,7 @@
                             [svgIcon]="'heroicons_solid:eye-off'"></mat-icon>
                     </button>
                     <mat-error>
-                        Password is required
+                        {{ 'SIGN-IN.PASSWORD-REQUIRED' | translate }}
                     </mat-error>
                 </mat-form-field>
 
@@ -81,11 +81,11 @@
                     <mat-checkbox
                         [color]="'primary'"
                         [formControlName]="'rememberMe'">
-                        Remember me
+                        {{ 'SIGN-IN.REMEMBER-ME' | translate }}
                     </mat-checkbox>
                     <a
                         class="text-md font-medium text-primary-500 hover:underline"
-                        [routerLink]="['/forgot-password']">Forgot password?
+                        [routerLink]="['/forgot-password']">{{ 'SIGN-IN.FORGOT-PASSWORD' | translate }}
                     </a>
                 </div>
 
@@ -97,7 +97,7 @@
                     [disabled]="signInForm.disabled"
                     (click)="signIn()">
                     <span *ngIf="!signInForm.disabled">
-                        Sign in
+                        {{ 'SIGN-IN.TITLE' | translate }}
                     </span>
                     <mat-progress-spinner
                         *ngIf="signInForm.disabled"
@@ -131,12 +131,11 @@
         <!-- Content -->
         <div class="z-10 relative w-full max-w-2xl">
             <div class="text-7xl font-bold leading-none text-gray-100">
-                <div>Welcome to</div>
-                <div>our community</div>
+                <div>{{ 'SIGN-IN.EXTRA-TITLE-1' | translate }}</div>
+                <div>{{ 'SIGN-IN.EXTRA-TITLE-2' | translate }}</div>
             </div>
             <div class="mt-6 text-lg tracking-tight leading-6 text-gray-400">
-                Fuse helps developers to build organized and well coded dashboards full of beautiful and rich modules.
-                Join us and start building your application today.
+                {{ 'SIGN-IN.EXTRA-SUBTITLE' | translate }}
             </div>
         </div>
     </div>

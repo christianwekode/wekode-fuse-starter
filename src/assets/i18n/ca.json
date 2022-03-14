@@ -5,5 +5,24 @@
     "example": "Ruta exemple",
     "LANG-ES": "Español",
     "LANG-CA": "Català",
-    "LANG-EN": "English"
+    "LANG-EN": "English",
+
+    "SIGN-IN": {
+        "TITLE": "Inicia sessió",
+        "NO-ACCOUNT": "No tens compte?",
+        "EMAIL": "Adreça electrónica",
+        "EMAIL-REQUIRED": "L'adreça electrónica és obligatòria",
+        "EMAIL-INCORRECT": "Si us plau, entra una adreça vàlida",
+        "PASSWORD": "Contrasenya",
+        "PASSWORD-REQUIRED": "La contrasenya és obligatòria",
+        "REMEMBER-ME": "Recorda'm",
+        "FORGOT-PASSWORD": "Has oblidat la contrasenya?",
+        "EXTRA-TITLE-1": "Welcome to",
+        "EXTRA-TITLE-2": "our community",
+        "EXTRA-SUBTITLE": "Fuse helps developers to build organized and well coded dashboards full of beautiful and rich modules. Join us and start building your application today."
+    },
+
+    "SIGN-UP": {
+        "TITLE": "Crear compte"
+    }
 }
