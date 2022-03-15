@@ -1,6 +1,7 @@
+import { FuseNavigationItem } from '@fuse/components/navigation';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, ReplaySubject } from 'rxjs';
+import { Observable, of, ReplaySubject } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { Navigation } from 'app/core/navigation/navigation.types';
 
@@ -11,10 +12,27 @@ export class NavigationService
 {
     private _navigation: ReplaySubject<Navigation> = new ReplaySubject<Navigation>(1);
 
+    private navigationData: FuseNavigationItem[] = [
+        {
+            id   : 'example',
+            title: 'example',
+            type : 'basic',
+            icon : 'heroicons_outline:chart-pie',
+            link : '/example'
+        }
+    ];
+
+    private navigation: Navigation = {
+        compact: [...this.navigationData],
+        default: [...this.navigationData],
+        futuristic: [...this.navigationData],
+        horizontal: [...this.navigationData],
+    };
+
     /**
      * Constructor
      */
-    constructor(private _httpClient: HttpClient)
+    constructor()
     {
     }
 
@@ -39,10 +57,11 @@ export class NavigationService
      */
     get(): Observable<Navigation>
     {
-        return this._httpClient.get<Navigation>('api/common/navigation').pipe(
-            tap((navigation) => {
-                this._navigation.next(navigation);
-            })
-        );
+        this._navigation.next(this.navigation);
+        return of(this.navigation)
+    }
+
+    getStatic(): Navigation {
+        return this.navigation;
     }
 }

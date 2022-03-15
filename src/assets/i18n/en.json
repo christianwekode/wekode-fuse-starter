@@ -30,5 +30,10 @@
 
     "SIGN-UP": {
         "TITLE": "Sign up"
+    },
+
+    "SEARCH": {
+        "PAGES-TITLE": "PAGES",
+        "NO-RESULTS": "No results found!"
     }
 }

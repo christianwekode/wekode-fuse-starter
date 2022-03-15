@@ -30,5 +30,10 @@
 
     "SIGN-UP": {
         "TITLE": "Crear compte"
+    },
+
+    "SEARCH": {
+        "PAGES-TITLE": "PÀGINES",
+        "NO-RESULTS": "No s'han trobat resultats!"
     }
 }

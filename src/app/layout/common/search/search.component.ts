@@ -1,6 +1,6 @@
+import { SearchService } from './search.service';
 import { Component, ElementRef, EventEmitter, HostBinding, Input, OnChanges, OnDestroy, OnInit, Output, Renderer2, SimpleChanges, ViewChild, ViewEncapsulation } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
 import { Subject } from 'rxjs';
 import { debounceTime, filter, map, takeUntil } from 'rxjs/operators';
 import { fuseAnimations } from '@fuse/animations/public-api';
@@ -28,9 +28,7 @@ export class SearchComponent implements OnChanges, OnInit, OnDestroy
      * Constructor
      */
     constructor(
-        private _elementRef: ElementRef,
-        private _httpClient: HttpClient,
-        private _renderer2: Renderer2
+        private _searchService: SearchService
     )
     {
     }
@@ -120,15 +118,13 @@ export class SearchComponent implements OnChanges, OnInit, OnDestroy
                 filter(value => value && value.length >= this.minLength)
             )
             .subscribe((value) => {
-                this._httpClient.post('api/common/search', {query: value})
-                    .subscribe((resultSets: any) => {
+                const results = this._searchService.getFilteredResults(value);
 
-                        // Store the result sets
-                        this.resultSets = resultSets;
+                // Store the result sets
+                this.resultSets = results;
 
-                        // Execute the event
-                        this.search.next(resultSets);
-                    });
+                // Execute the event
+                this.search.next(results);
             });
     }
 

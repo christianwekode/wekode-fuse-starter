@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, ReplaySubject } from 'rxjs';
+import { Observable, of, ReplaySubject } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 import { User } from 'app/core/user/user.types';
 
@@ -11,10 +11,18 @@ export class UserService
 {
     private _user: ReplaySubject<User> = new ReplaySubject<User>(1);
 
+    private defaultUser: User = {
+        id    : 'cfaad35d-07a3-4447-a6c3-d8c3d54fd5df',
+        name  : 'Brian Hughes',
+        email : 'hughes.brian@company.com',
+        avatar: 'assets/images/avatars/avatar.jpg',
+        status: 'online'
+    };
+
     /**
      * Constructor
      */
-    constructor(private _httpClient: HttpClient)
+    constructor()
     {
     }
 
@@ -47,11 +55,8 @@ export class UserService
      */
     get(): Observable<User>
     {
-        return this._httpClient.get<User>('api/common/user').pipe(
-            tap((user) => {
-                this._user.next(user);
-            })
-        );
+        this._user.next(this.defaultUser);
+        return of(this.defaultUser)
     }
 
     /**
@@ -61,10 +66,8 @@ export class UserService
      */
     update(user: User): Observable<any>
     {
-        return this._httpClient.patch<User>('api/common/user', {user}).pipe(
-            map((response) => {
-                this._user.next(response);
-            })
-        );
+        this.defaultUser = user;
+        this._user.next(this.defaultUser);
+        return of(user);
     }
 }
