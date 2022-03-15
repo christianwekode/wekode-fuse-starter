@@ -7,6 +7,12 @@
     "LANG-CA": "Català",
     "LANG-EN": "English",
 
+    "SETTINGS": {
+        "TITLE": "Settings",
+        "SIGNED-IN-AS": "Signed in as",
+        "SIGN-OUT": "Sign out"
+    },
+
     "SIGN-IN": {
         "TITLE": "Sign in",
         "NO-ACCOUNT": "Don't have an account?",

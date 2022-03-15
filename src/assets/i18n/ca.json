@@ -7,6 +7,12 @@
     "LANG-CA": "Català",
     "LANG-EN": "English",
 
+    "SETTINGS": {
+        "TITLE": "Configuració",
+        "SIGNED-IN-AS": "Sessió iniciada com",
+        "SIGN-OUT": "Tencar sessió"
+    },
+
     "SIGN-IN": {
         "TITLE": "Inicia sessió",
         "NO-ACCOUNT": "No tens compte?",
