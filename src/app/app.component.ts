@@ -15,7 +15,7 @@ export class AppComponent
         translate: TranslateService
     )
     {
-        translate.setDefaultLang('es');
-        translate.use('es');
+        translate.setDefaultLang('ca');
+        translate.use('ca');
     }
 }

@@ -40,7 +40,7 @@ export function createTranslateLoader(http: HttpClient) {
         // Core module of your application
         HttpClientModule,
         TranslateModule.forRoot({
-            defaultLanguage: 'es',
+            defaultLanguage: 'ca',
             loader: {
                 provide: TranslateLoader,
                 useFactory: createTranslateLoader,

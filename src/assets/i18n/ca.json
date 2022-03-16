@@ -34,6 +34,13 @@
 
     "SEARCH": {
         "PAGES-TITLE": "PÀGINES",
-        "NO-RESULTS": "No s'han trobat resultats!"
+        "NO-RESULTS": "No s'han trobat resultats!",
+        "PLACEHOLDER": "Busca una pàgina o funcionalitat"
+    },
+
+    "MESSAGES": {
+        "TITLE": "Notificacions",
+        "NO-MESSAGES": "No hi han notificacions",
+        "NO-MESSAGES-SUBTITLE": "Quan tinguis notificacions apareixeran aquí."
     }
 }

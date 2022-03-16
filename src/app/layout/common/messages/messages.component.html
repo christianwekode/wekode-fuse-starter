@@ -6,7 +6,7 @@
     <ng-container *ngIf="unreadCount > 0">
         <span class="absolute top-0 right-0 left-0 flex items-center justify-center h-3">
             <span class="flex items-center justify-center flex-shrink-0 min-w-4 h-4 px-1 ml-4 mt-2.5 rounded-full bg-indigo-600 text-indigo-50 text-xs font-medium">
-                {{unreadCount}}
+                {{ unreadCount }}
             </span>
         </span>
     </ng-container>
@@ -29,7 +29,7 @@
                         [svgIcon]="'heroicons_solid:x'"></mat-icon>
                 </button>
             </div>
-            <div class="text-lg font-medium leading-10">Messages</div>
+            <div class="text-lg font-medium leading-10">{{ 'MESSAGES.TITLE' | translate }}</div>
             <div class="ml-auto">
                 <button
                     mat-icon-button
@@ -149,8 +149,8 @@
                             class="text-primary-500-700"
                             [svgIcon]="'heroicons_outline:inbox'"></mat-icon>
                     </div>
-                    <div class="mt-5 text-2xl font-semibold tracking-tight">No messages</div>
-                    <div class="w-full max-w-60 mt-1 text-md text-center text-secondary">When you have messages, they will appear here.</div>
+                    <div class="mt-5 text-2xl font-semibold tracking-tight">{{ 'MESSAGES.NO-MESSAGES' | translate }}</div>
+                    <div class="w-full max-w-60 mt-1 text-md text-center text-secondary">{{ 'MESSAGES.NO-MESSAGES-SUBTITLE' | translate }}</div>
                 </div>
             </ng-container>
         </div>

@@ -34,6 +34,13 @@
 
     "SEARCH": {
         "PAGES-TITLE": "PAGES",
-        "NO-RESULTS": "No results found!"
+        "NO-RESULTS": "No results found!",
+        "PLACEHOLDER": "Search for a page or a contact"
+    },
+
+    "MESSAGES": {
+        "TITLE": "Notifications",
+        "NO-MESSAGES": "No notifications",
+        "NO-MESSAGES-SUBTITLE": "When you have messages, they will appear here."
     }
 }
