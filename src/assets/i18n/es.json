@@ -6,6 +6,11 @@
     "LANG-ES": "Español",
     "LANG-CA": "Català",
     "LANG-EN": "English",
+    "OVERVIEW": "Visión general",
+
+    "NAVIGATION": {
+        "EXAMPLE-OVERVIEW": "Maestro de ejemplo"
+    },
 
     "SETTINGS": {
         "TITLE": "Configuración",
@@ -42,5 +47,13 @@
         "TITLE": "Notificaciones",
         "NO-MESSAGES": "No hay notificaciones",
         "NO-MESSAGES-SUBTITLE": "Cuando tengas notificaciones apareceran aquí."
+    },
+
+    "EXAMPLE": {
+        "FILTERS": "Filtros",
+        "ALL-PRODUCTS": "Todos los elementos",
+        "ON-CREATION": "En creación",
+        "COMPLETED": "Completados",
+        "MISSING-IMPORTANT-INFO": "Sin información clave"
     }
 }

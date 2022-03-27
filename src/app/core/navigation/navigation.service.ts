@@ -14,10 +14,10 @@ export class NavigationService
 
     private navigationData: FuseNavigationItem[] = [
         {
-            id   : 'example',
-            title: 'example',
+            id   : 'example-overview',
+            title: 'NAVIGATION.EXAMPLE-OVERVIEW',
             type : 'basic',
-            icon : 'heroicons_outline:chart-pie',
+            icon : 'heroicons_outline:database',
             link : '/example'
         }
     ];
