@@ -29,7 +29,18 @@ export class SearchService
         const pagesResults = cloneDeep(flatNavigation).filter(page => {
             let titleMatch: boolean = false;
             if(page.title){
-                const titleTranslate: string = translations[page.title];
+                let titleTranslationsObject: any = translations;
+                let titleTranslate: string | undefined;
+
+                const splittedTitle: string[] = page.title.split('.');
+                splittedTitle.forEach((titleKey, index) => {
+                    if(index === (splittedTitle.length - 1)){
+                        titleTranslate = titleTranslationsObject[titleKey];
+                    } else {
+                        titleTranslationsObject = titleTranslationsObject[titleKey];
+                    }
+                });
+
                 if(titleTranslate){
                     const normalizedTitle: string = this.utils.normalizeString(titleTranslate);
                     titleMatch = normalizedTitle.includes(normalizedQuery);
@@ -38,7 +49,18 @@ export class SearchService
 
             let subtitleMatch: boolean = false;
             if(page.subtitle){
-                const subtitleTranslate: string = translations[page.subtitle];
+                let subtitleTranslationsObject: any = translations;
+                let subtitleTranslate: string | undefined;
+
+                const splittedSubtitle: string[] = page.subtitle.split('.');
+                splittedSubtitle.forEach((subtitleKey, index) => {
+                    if(index === (splittedSubtitle.length - 1)){
+                        subtitleTranslate = subtitleTranslationsObject[subtitleKey];
+                    } else {
+                        subtitleTranslationsObject = subtitleTranslationsObject[subtitleKey];
+                    }
+                });
+
                 if(subtitleTranslate){
                     const normalizedSubtitle: string = this.utils.normalizeString(subtitleTranslate);
                     subtitleMatch = normalizedSubtitle.includes(normalizedQuery);
