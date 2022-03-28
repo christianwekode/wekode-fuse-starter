@@ -11,11 +11,11 @@ import { MessagesModule } from 'app/layout/common/messages/messages.module';
 import { SearchModule } from 'app/layout/common/search/search.module';
 import { UserModule } from 'app/layout/common/user/user.module';
 import { SharedModule } from 'app/shared/shared.module';
-import { DenseLayoutComponent } from 'app/layout/layouts/vertical/dense/dense.component';
+import { ClassyLayoutComponent } from 'app/layout/layouts/classy/classy.component';
 
 @NgModule({
     declarations: [
-        DenseLayoutComponent
+        ClassyLayoutComponent
     ],
     imports     : [
         HttpClientModule,
@@ -32,9 +32,9 @@ import { DenseLayoutComponent } from 'app/layout/layouts/vertical/dense/dense.co
         SharedModule
     ],
     exports     : [
-        DenseLayoutComponent
+        ClassyLayoutComponent
     ]
 })
-export class DenseLayoutModule
+export class ClassyLayoutModule
 {
 }
