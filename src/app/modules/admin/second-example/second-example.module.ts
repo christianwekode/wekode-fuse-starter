@@ -1,26 +1,26 @@
 import { SharedModule } from 'app/shared/shared.module';
 import { NgModule } from '@angular/core';
 import { Route, RouterModule } from '@angular/router';
-import { ExampleComponent } from 'app/modules/admin/example/pages/example/example.component';
+import { SecondExampleComponent } from 'app/modules/admin/second-example/pages/second-example/second-example.component';
 import { PageLayoutsModule } from 'app/modules/ui/page-layouts/page-layouts.module';
 
-const exampleRoutes: Route[] = [
+const secondExampleRoutes: Route[] = [
     {
         path     : '',
-        component: ExampleComponent
+        component: SecondExampleComponent
     }
 ];
 
 @NgModule({
     declarations: [
-        ExampleComponent
+        SecondExampleComponent
     ],
     imports     : [
-        RouterModule.forChild(exampleRoutes),
+        RouterModule.forChild(secondExampleRoutes),
         SharedModule,
         PageLayoutsModule
     ]
 })
-export class ExampleModule
+export class SecondExampleModule
 {
 }

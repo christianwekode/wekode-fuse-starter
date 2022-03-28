@@ -19,6 +19,13 @@ export class NavigationService
             type : 'basic',
             icon : 'heroicons_outline:database',
             link : '/example'
+        },
+        {
+            id   : 'example-overview',
+            title: 'NAVIGATION.SECOND-EXAMPLE-OVERVIEW',
+            type : 'basic',
+            icon : 'heroicons_outline:arrows-expand',
+            link : '/second-example'
         }
     ];
 

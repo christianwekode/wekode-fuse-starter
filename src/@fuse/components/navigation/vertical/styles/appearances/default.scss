@@ -19,6 +19,12 @@ fuse-vertical-navigation {
     /* @ Navigation Drawer
     /* ----------------------------------------------------------------------------------------------------- */
 
+    &.no-title {
+        fuse-vertical-navigation-group-item {
+            margin-top: 0px !important;
+        }
+    }
+
     /* Animations */
     &.fuse-vertical-navigation-animations-enabled {
         transition-duration: 400ms;

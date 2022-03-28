@@ -9,7 +9,8 @@
     "OVERVIEW": "Overview",
 
     "NAVIGATION": {
-        "EXAMPLE-OVERVIEW": "Example overview"
+        "EXAMPLE-OVERVIEW": "Example overview",
+        "SECOND-EXAMPLE-OVERVIEW": "Second example"
     },
 
     "SETTINGS": {
@@ -55,5 +56,9 @@
         "ON-CREATION": "On creation",
         "COMPLETED": "Completed",
         "MISSING-IMPORTANT-INFO": "Missing key information"
+    },
+
+    "SECOND-EXAMPLE": {
+        "TEST-BTN": "Some action"
     }
 }

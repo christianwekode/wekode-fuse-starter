@@ -9,7 +9,8 @@
     "OVERVIEW": "Visió general",
 
     "NAVIGATION": {
-        "EXAMPLE-OVERVIEW": "Mestre de exemple"
+        "EXAMPLE-OVERVIEW": "Mestre de exemple",
+        "SECOND-EXAMPLE-OVERVIEW": "Segon mestre"
     },
 
     "SETTINGS": {
@@ -55,5 +56,9 @@
         "ON-CREATION": "En creació",
         "COMPLETED": "Completats",
         "MISSING-IMPORTANT-INFO": "Sense informació clau"
+    },
+
+    "SECOND-EXAMPLE": {
+        "TEST-BTN": "Fer algo"
     }
 }
